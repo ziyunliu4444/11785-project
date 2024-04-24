@@ -72,13 +72,13 @@ def extract_beats_and_downbeats(osu_file, dur):
 
                 else:
                 
-                    beats.extend(frange(current_time, time, round(mpb)))
-                    downbeats.extend(frange(current_time, time, round(mpb * meter)))
+                    beats.extend(frange(current_time, time, mpb))
+                    downbeats.extend(frange(current_time, time, mpb * meter))
             
                     current_time = time
 
-        beats.extend(frange(current_time, dur, round(mpb)))
-        downbeats.extend(frange(current_time, dur, round(mpb * meter)))
+        beats.extend(frange(current_time, dur, mpb))
+        downbeats.extend(frange(current_time, dur, mpb * meter))
 
 
     return beats, downbeats
